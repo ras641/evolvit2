@@ -8,13 +8,15 @@ class World {
 
 public:
 
+    World(int xCells, int yCells, int xSize, int ySize);
+
+    void addCreature(int cellX = 0, int cellY = 0, float x = 250, float y = 250, float direction = 0.0f, float energy = 100.0f);
+
+private:
+
     std::unordered_map<uint32_t, Creature> creatures;
 
     CellGrid cells;
 
     uint32_t nextID = 1;
-
-    World(int xCells, int yCells, int xSize, int ySize);
-
-    void addCreature(int cellX = 0, int cellY = 0, float x = 250, float y = 250, float direction = 0.0f, int energy = 100);
 };

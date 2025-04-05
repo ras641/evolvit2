@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 
+#include <cstdint>
+
 struct Creature; // forward declaration
 
 struct Cell {
