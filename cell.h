@@ -3,14 +3,23 @@
 
 #include <cstdint>
 
-struct Creature; // forward declaration
+#include "creature.h"
 
-struct Cell {
+class Cell {
+
+public:
+
     float X, Y, maxX, maxY;
     std::vector<Creature*> creaturePtrs;
 
     void add(Creature* c);
-    void remove(Creature* c);
+    //void remove(Creature* c);
 
     bool contains(float x, float y) const;
+
+    void run();
+
+    void run_creatures();
+
+    void run_collisions();
 };

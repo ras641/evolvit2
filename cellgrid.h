@@ -22,7 +22,13 @@ public:
 
     Cell& getCell(int x, int y);
 
+    void run();
 
+    void updateReferences();
+
+    int xCells, yCells, xSize,ySize;
+
+private:
 
     //void moveCreature(Creature& c, float newX, float newY);
 };

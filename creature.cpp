@@ -1,7 +1,7 @@
 #include "creature.h"
 
 Creature::Creature(uint16_t id, float x, float y, float direction, float energy)
-    : id(id), x(x), y(y), direction(direction), energy(energy), cellX(-1), cellY(-1) {}
+    : id(id), x(x), y(y), xvel(0), yvel(0), direction(direction), av(0), energy(energy), cellX(-1), cellY(-1) {}
 
 uint16_t Creature::getId() const { return id; }
 float Creature::getX() const { return x; }
@@ -35,4 +35,14 @@ void Creature::print() const {
               << "  Direction: " << direction << " rad\n"
               << "  Energy: " << energy << "\n"
               << "  Cell: (" << cellX << ", " << cellY << ")\n";
+}
+
+void Creature::update_position() {
+
+    //x += xvel;
+
+    x += 500;
+    y += yvel;
+
+    direction = std::fmodf(direction + av, 2 * pi);
 }

@@ -1,5 +1,6 @@
 #include "cell.h"
-#include "creature.h" // actual definition needed here
+
+// actual definition needed here
 
 void Cell::add(Creature* c) {
     creaturePtrs.push_back(c);
@@ -14,4 +15,22 @@ void Cell::remove(Creature* c) {
 
 bool Cell::contains(float x, float y) const {
     return x >= X && x < maxX && y >= Y && y < maxY;
+}
+
+void Cell::run() {
+
+    run_creatures();
+}
+
+void Cell::run_creatures() {
+
+    for (auto& c : creaturePtrs) {
+
+        c->update_position();
+    }
+}
+
+void Cell::run_collisions() {
+
+    //use apply_force. will define later
 }
